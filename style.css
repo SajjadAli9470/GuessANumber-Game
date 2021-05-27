@@ -1,91 +1,110 @@
 body {
-  background-color: rgb(214, 211, 218);
+  display: block;
+  background-color: rgb(245, 245, 245);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(245, 245, 245);
 }
-html {
-  font-size: 150%;
-  box-sizing: border-box;
+.goback {
+  font-size: 50%;
 }
-.overall {
-  align-content: center;
-  border-radius: 15%;
-  border-color: black;
-  border-style: double;
-  background-color: rgba(90, 89, 85, 0.3);
+html {
+  font-size: 100%;
+  display: block;
+}
+.headerTable {
+  height: 3rem;
 }
 header {
-  position: fixed;
-  border-style: ridge;
-  color: black;
+  border-radius: 3rem;
+  color: rgb(240, 235, 235);
   width: 100%;
-  background-color: rgb(250, 250, 250);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  border-bottom: 7px #eee;
+  background-color: rgba(36, 29, 167, 0.878);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.logo {
+  color: rgb(248, 248, 248);
+  cursor: pointer;
+  width: 20%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 200%;
+  border-width: 2px;
+  border-bottom-left-radius: 3rem;
+  border-top-left-radius: 3rem;
+  border-color: rgba(36, 29, 167, 0.878);
 }
 
+.sitetitle {
+  border-bottom-right-radius: 3rem;
+  border-top-right-radius: 3rem;
+  color: black;
+  width: 70%;
+  font-size: 150%;
+  background: linear-gradient(
+    90deg,
+    rgb(233, 231, 231),
+    rgba(236, 235, 238, 0.878)
+  );
+}
+.subtitle {
+  color: rgb(243, 242, 242);
+  font-size: 40%;
+  text-align: left;
+}
 .number {
   font-size: 110%;
   font-family: monospace;
   text-align: center;
 }
-.high {
-  /* border-radius: 30% 30% 30%; */
-  background-color: rgb(99, 45, 45);
-  color: rgb(0, 0, 0);
-  border-color: rgb(214, 41, 41);
-  border-style: groove;
+.numberstatus {
+  padding: 5%;
 }
-.low {
-  background-color: rgb(92, 92, 44);
-  color: rgb(0, 0, 0);
-  /* border-radius: 30% 30% 30%; */
-  border-color: rgb(209, 204, 47);
-  border-style: groove;
-}
-.correct {
-  background-color: rgb(46, 106, 31);
-  color: rgb(0, 0, 0);
-  /* border-radius: 30% 30% 30%; */
-  border-color: rgb(12, 133, 38);
-  border-style: groove;
-}
+
 main {
-  border-radius: 50px 50px 50px;
-  background-image: linear-gradient(
-    180deg,
-    rgb(250, 251, 253),
-    rgb(177, 177, 189)
-  );
   align-content: center;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border: none;
-  margin: 5%;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: -4%;
 }
 
 .guess {
-  margin: 10px;
+  margin: 3%;
   background: none;
   text-align: center;
   font-size: 3rem;
   display: block;
 }
 
-.numberstatus {
-  padding: 5%;
+.high {
+  background-color: rgb(204, 158, 158);
+  color: rgb(0, 0, 0);
+  font-size: 90%;
+}
+.low {
+  background-color: rgb(157, 157, 79);
+  color: rgb(0, 0, 0);
+  font-size: 90%;
+}
+.correct {
+  background-color: rgb(93, 165, 75);
+  color: rgb(0, 0, 0);
+  font-size: 90%;
+}
+.status {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 .right {
   border-style: groove;
-  border-width: 1px;
   align-content: center;
   width: 50%;
   text-align: inherit;
   margin: 5%;
-  border: none;
-  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(30, 29, 133, 0.631);
+  border-width: 3px;
+  background: rgba(228, 228, 237, 0.7);
   border-radius: 15px 15px 15px;
 }
 .left {
@@ -96,55 +115,49 @@ main {
   border-style: groove;
   border-width: 1px;
   align-content: center;
+  border-color: rgba(30, 29, 133, 0.631);
+  border-width: 3px;
   width: 50%;
   margin: 5%;
-  border: none;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(228, 228, 237, 0.7);
 }
 input {
+  border-radius: 1rem;
   width: 50%;
-  border: 4px solid rgb(10, 0, 0);
+  border: 4px solid rgb(20, 18, 140);
 }
 .result {
+  border-width: 3px;
+  border-color: black;
   border-radius: 50px 50px 50px;
-  background-image: linear-gradient(
-    180deg,
-    rgb(250, 251, 253),
-    rgb(177, 177, 189)
-  );
-
-  /* rgb(248, 248, 250),
-  rgb(123, 113, 113) */
+  background-color: rgba(252, 252, 252, 0.419);
   align-content: center;
   align-items: center;
   justify-content: space-around;
-  border: none;
   width: 70%;
   margin: 5%;
 }
 .check {
+  border-radius: 2rem;
   margin: 9px;
-  /* border-radius: 15px; */
   background: rgba(253, 253, 253, 0.953);
   color: rgb(46, 41, 41);
   font-size: 130%;
   font-family: inherit;
   cursor: pointer;
-  /* border-color: 1px solid white; */
 }
 .check:hover {
-
   background-color: rgb(44, 32, 211);
   color: rgb(252, 250, 250);
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-
 }
 .restart {
+  border-radius: 2rem;
   margin: 9px;
-  background: rgba(46, 44, 44, 0.891);
-  color: rgba(255, 255, 255, 0.864);
+  background: rgba(253, 253, 253, 0.953);
+  color: rgb(46, 41, 41);
   font-size: 130%;
   font-family: inherit;
   cursor: pointer;
@@ -155,11 +168,10 @@ input {
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-
 }
 .range {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   font-weight: 900;
 }
 .resultsection {
@@ -168,101 +180,72 @@ input {
   width: 40%;
   font-size: 60%;
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border: none;
-  background: rgba(0, 0, 0, 0.686);
+  background: rgba(36, 30, 150, 0.837);
   border-radius: 15px 15px 15px;
 }
-.fazool {
-  padding-bottom: 90px;
-}
+
 .message {
-  background: rgba(9, 25, 118, 0.7);
+  background: rgba(37, 32, 134, 0.844);
   border-style: double;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
+  border-radius: 1rem;
   padding: 1%;
 }
 .parentdiv {
   padding-left: 15%;
   align-content: center;
 }
-.logo {
-  cursor: pointer;
-  width: 20%;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 200%;
-}
 
-:hover.logo {
-  background: rgba(9, 25, 118, 0.2);
-}
-.sitetitle {
-  width: 70%;
-  font-size: 150%;
-  background: linear-gradient(
-    90deg,
-    rgb(119, 113, 113),
-    rgba(229, 227, 233, 0.878)
-  );
-  
-}
-.subtitle {
-  font-size: 40%;
-  text-align: left;
-}
 .parentnote {
   align-items: center;
-  color: rgb(50, 50, 148);
- 
+  color: rgba(104, 14, 4, 0.967);
 }
 .number {
   margin: auto;
-  width: 150px;
-  height: 150px;
+  width: 9rem;
+  height: 9rem;
   font-family: monospace;
   padding-top: 1%;
-  padding-bottom: 1%;
+  padding-bottom: -3px;
   text-align: center;
   font-size: 700%;
   border-style: solid;
   border-radius: 17px;
   border-width: 1px;
-  border-color: red;
-  background: rgba(165, 10, 10, 0.3);
+  border-color: rgb(118, 10, 10);
+  background: rgba(194, 158, 158, 0.3);
 }
 .score {
-  color: rgb(202, 200, 31);
+  color: rgb(238, 238, 238);
 }
 .highscore {
-  color: rgb(13, 235, 87);
+  color: rgb(247, 247, 247);
 }
 .modal {
-  
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
-  overflow: auto; 
-  background-color: rgb(7, 2, 2); 
-  background-color: rgba(38, 33, 33, 0.433); 
+  overflow: auto;
+  font-size: 150%;
+  background-color: rgba(48, 39, 39, 0.433);
 }
 
 .modal-content {
-
-  background-color: #fefefe;
+  background-color: #e6e6e6;
   margin: 20% auto;
- 
+
   color: black;
   padding: 20px;
+  border-radius: 20px 20px 20px 20px;
   border: 1px solid #888;
-  width: 80%; 
+  width: 80%;
 }
-
 
 .close {
   color: rgb(150, 44, 44);
@@ -274,23 +257,257 @@ input {
 .close:hover,
 .close:focus {
   color: black;
-  text-decoration:none;
+  text-decoration: none;
   cursor: pointer;
 }
-/* .settingicon{
 
-  background-image: url('images/settingImage.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 65px;
-  background-origin: inherit;
-  
+.guess:focus {
+  border-radius: 0rem;
+}
+/* -------------------------------------- */
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: rgba(253, 253, 253, 0.385);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(245, 245, 245);
+  }
+  html {
+    font-size: 100%;
 
-} */
-/* :hover.settingicon{
-  background-color: rgb(1, 1, 2);
-  color: rgb(225, 214, 214);
-  /* -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s; */
-/* } */ 
+    box-sizing: border-box;
+  }
+  .headerTable {
+    height: 5rem;
+  }
+  header {
+    display: block;
+    position: relative;
+    color: rgb(240, 235, 235);
+    width: 100%;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+
+  .high {
+    background-color: rgb(150, 103, 103);
+    color: rgb(0, 0, 0);
+  }
+  .low {
+    background-color: rgb(146, 146, 94);
+    color: rgb(0, 0, 0);
+  }
+  .correct {
+    background-color: rgb(93, 141, 80);
+    color: rgb(0, 0, 0);
+  }
+
+  .right {
+    border-style: groove;
+    align-content: center;
+    width: 40%;
+    text-align: inherit;
+    border: 1px solid rgb(31, 22, 107);
+    background: rgba(220, 221, 219, 0.357);
+    border-radius: 15px 15px 15px;
+  }
+  .left {
+    display: flex;
+
+    align-items: center;
+    border-radius: 15px 15px 15px;
+    border-style: groove;
+    border-width: 1px;
+    align-content: center;
+    width: 40%;
+    height: 170px;
+    border: 1px solid rgb(31, 22, 107);
+    background: rgba(220, 221, 219, 0.357);
+  }
+  .numberstatus {
+    display: -moz-box;
+    width: 40%;
+    height: 170px;
+  }
+  input {
+    width: 50%;
+    height: 100px;
+  }
+  .guess {
+    background: none;
+    text-align: center;
+    font-size: 3rem;
+    display: block;
+  }
+  .guess:focus {
+    border-radius: 0rem;
+  }
+
+  .result {
+    border-radius: 15% 15% 15%;
+    background-color: rgb(226, 230, 225);
+    align-content: center;
+    align-items: center;
+    border: none;
+    width: 70%;
+    justify-content: center;
+    margin-top: 10%;
+
+    margin-left: 5%;
+    margin-right: 0%;
+  }
+  .check {
+    margin: 9px;
+    background: rgba(253, 253, 253, 0.953);
+    color: rgb(46, 41, 41);
+    font-size: 130%;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .guess {
+    background: none;
+    text-align: center;
+    font-size: 3rem;
+    display: block;
+  }
+
+  .check:hover {
+    background-color: rgb(19, 18, 94);
+    color: rgb(252, 250, 250);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .status {
+    width: 95%;
+  }
+  main {
+    margin-left: -3%;
+    margin-right: -3%;
+  }
+
+  .restart {
+    margin: 9px;
+    background: rgba(253, 253, 253, 0.953);
+    color: rgb(46, 41, 41);
+    font-size: 130%;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .restart:hover {
+    background-color: rgb(19, 18, 94);
+    color: rgb(252, 250, 250);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .range {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: 600px;
+  }
+  .resultsection {
+    padding: 2%;
+    align-content: center;
+    width: 60%;
+    font-size: 60%;
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border: none;
+    background: rgba(15, 18, 123, 0.786);
+    border-radius: 15px 15px 15px;
+  }
+  .fazool {
+    padding-bottom: 2px;
+  }
+  .message {
+    background: rgba(38, 44, 126, 0.786);
+    border-style: hidden;
+  }
+  .parentdiv {
+    width: 100%;
+    margin: -5%;
+    align-content: center;
+  }
+  .logo {
+    color: rgb(248, 248, 248);
+    cursor: pointer;
+    width: 5%;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 180%;
+  }
+
+  .sitetitle {
+    color: black;
+    width: 70%;
+    font-size: 150%;
+    background: rgba(247, 247, 247, 0.823);
+  }
+  .subtitle {
+    color: rgb(243, 242, 242);
+    font-size: 40%;
+    text-align: left;
+  }
+  .parentnote {
+    align-items: center;
+    color: rgba(104, 14, 4, 0.967);
+  }
+  .number {
+    width: 130px;
+    height: 130px;
+    font-family: monospace;
+    text-align: center;
+    font-size: 700%;
+    border-style: solid;
+    border-radius: 17px;
+    border-width: 1px;
+    border-color: red;
+    background: rgba(123, 8, 8, 0.3);
+  }
+  .lastSpace {
+    margin-bottom: 20%;
+  }
+  .score {
+    color: rgb(245, 241, 6);
+  }
+  .highscore {
+    color: rgb(13, 235, 87);
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(7, 2, 2);
+    background-color: rgba(38, 33, 33, 0.433);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+
+    color: black;
+    padding: 20px;
+    border-radius: 20px 20px 20px 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+
+  .close {
+    color: rgb(150, 44, 44);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
