@@ -5,34 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+
     
     <title>Guess Game</title>
   </head>
   <body>
     <header>
-           <table height='80' width='100%' class="" >
+        <table width='100%' class="headerTable" >
         <tr>
             <td class='logo' align="center">
-                #Game
-                <table >
-                    <tr>
-                        <td class="subtitle" >
-                           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Project1
-                        </td>
-                    </tr>
-                </table>
+              #Game         
             </td>
             <td  class='sitetitle' align="center">
-                Guess Correct Value ?
+                Guess Box Value ?
             </td >
-            <!-- <td class="settingicon" align="center">   
-            </td> -->
         </tr>
     </table> 
 
     </header>
 <div class="fazool" ></div>
-<div class="overall">
+<!-- <div class="overall"> -->
 
    
     <section class="parentnote" align="center" >
@@ -43,18 +35,21 @@
         <div class="line" align="center"></div>
      
     </section>
-
+    <div class="status" align='center'>
+        <p class="label-message" display="inline">
+            <p class="message">Start Guessing....</p></p> 
+    </div>
     <main>
         <!-- left Area -->
       <section class="left">
           <!-- Input for guess Number -->
-        <input class="guess" type="number" />
+        <input id="checked" class="guess" type="number" />
         <!-- Button to Check Exact or not -->
         <button id="loose" class="check">CHECK!</button>
       </section>
       <!-- Right Area -->
-      <section class="right">
-        <table class="numberstatus" height='170' width='80%'  align="center">
+      <section class="right" align="center">
+        <table class="numberstatus" height='170' width='50%'  align="center">
             <tr>
                 <td class='high' align="center">
                     <strong>HIGH<strong>
@@ -81,10 +76,9 @@
       </section>
       
     </main>
+    <!-- Score Board -->
     <div class="parentdiv" >
         <div class="result" align='center'>
-        <p class="label-message" display="inline">
-            <p class="message">Start Guessing....</p></p>   
         <section class="resultsection">
            
             <h2 class="label-score">Score : <span class="score">20</span></h2>
@@ -94,8 +88,9 @@
         </section>
         <button class="restart" >NEW GAME</button>
     </div>
-</div>
-</div>
+</div> 
+<div class="lastSpace"></div>
+<!-- </div> -->
 <div id="myModal" class="modal">
 
     <!-- Modal content -->
