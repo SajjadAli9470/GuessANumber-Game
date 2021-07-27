@@ -1,180 +1,153 @@
-// for Mobile Menu
+"use strict";
+document.querySelector(".logo").addEventListener("click", function () {
+  location.href = "http://letslearn.getenjoyment.net/";
 
-let MenuOpen = false;
+  // document.querySelector(".logo").textContent = "LetsLearn";
+});
+document.querySelector(".logo").addEventListener("mouseover", function () {
+  document.querySelector(".logo").textContent = "LetsLearn";
+  this.style.backgroundColor = "rgb(9, 99, 85)";
+});
 
-function MenuIcon(x) {
-  if (MenuOpen == false) {
-    x.classList.toggle("change");
-    document.querySelector(".nav").style.height = "47vh";
-    document.getElementById("MenueDisplay").style.display = "block";
-    MenuOpen = true;
-  } else {
-    x.classList.toggle("change");
-    document.querySelector(".nav").style.height = "11vh";
-    document.getElementById("MenueDisplay").style.display = "none";
-    MenuOpen = false;
-  }
+document.querySelector(".logo").addEventListener("mouseout", function () {
+  document.querySelector(".logo").textContent = "#Game";
+  this.style.backgroundColor = "";s
+});
+
+document.getElementById("checked").focus();
+let highscore = 0;
+let score = 20;
+let sno;
+function secNumber() {
+  sno = Math.trunc(Math.random() * 20 + 1);
+  // console.log(sno);
 }
-
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".btn--close-modal");
-const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
-const btnScrollTo = document.querySelector(".btn--scroll-to");
-const section1 = document.querySelector("#section--1");
-const nav = document.querySelector(".nav");
-
-// Modal window
-
-const openModal = function (e) {
-  e.preventDefault();
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
-
-btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
-
-btnCloseModal.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
-
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
-  }
-});
-// Sticky Header
-const header = document.querySelector(".header");
-const navHeight = nav.getBoundingClientRect().height;
-
-const stickyNav = function (entries) {
-  const [entry] = entries;
-  // console.log(entry);
-
-  if (!entry.isIntersecting) nav.classList.add("sticky");
-  else nav.classList.remove("sticky");
-};
-
-const headerObserver = new IntersectionObserver(stickyNav, {
-  root: null,
-  threshold: 0,
-  rootMargin: `-${navHeight}px`,
-});
-headerObserver.observe(header);
-
-// for sticky sider social menu bar
-var bar = document.querySelector(".container_social");
-var icons = document.querySelector(".social_icons");
-
-bar.addEventListener("mouseenter", function () {
-  bar.style.display = "none";
-  icons.style.display = "block";
-});
-icons.addEventListener("mouseleave", function () {
-  bar.style.display = "block";
-  icons.style.display = "none";
-});
-
-// to check load more
-
-const loadmore = document.querySelector("#loadmore");
-const elementList = [
-  ...document.querySelectorAll(".content_list .content_item"),
-];
-if (elementList.length <= 4) {
-    loadmore.style.display = "none";
-  }
-
-let currentItems = 4;
-
-loadmore.addEventListener("click", (e) => {
-  
-  
-  for (let i = currentItems; i < currentItems + 2; i++) {
-    if (elementList[i]) {
-      elementList[i].style.display = "flex";
-    }
-  }
-  currentItems += 2;
-
-  // Load more button will be hidden after content_list fully loaded
-  if (currentItems >= elementList.length) {
-    event.target.style.display = "none";
-  }
-});
-
-// dispaly clicked post
-
-let contentList_Children = document.querySelector(".content_list").children;
-
-for (let i = 0; i <= contentList_Children.length; i++) {
-  // console.log(contentList_Children[i]);
+secNumber();
+function resetGame() {
+  secNumber();
+  document.getElementById("checked").focus();
+  score = 20;
+  highscore = 0;
+  // console.log(sno);
+  document.querySelector(".message").textContent = "Start Guessing....";
+  document.querySelector(".guess").value = null;
+  document.querySelector(".low").style.backgroundColor = "";
+  document.querySelector(".low").style.fontSize = "";
+  document.querySelector(".high").style.backgroundColor = "";
+  document.querySelector(".high").style.fontSize = "";
+  document.querySelector(".correct").style.backgroundColor = "";
+  document.querySelector(".correct").style.fontSize = "";
+  document.querySelector(".number").style.color = "";
+  document.querySelector(".number").style.backgroundColor = "";
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".score").textContent = score;
+  document.querySelector(".highscore").textContent = highscore;
 }
+const resetGuessGame = function restartGame() {
+  resetGame();
+};
+const startGuessGame = function checkNumber() {
+  const guess = Number(document.querySelector(".guess").value);
+  document.getElementById("checked").focus();
+  if (score > 5) {
+    if (!guess) {
+      document.querySelector(".message").textContent =
+        "😜Select number first...";
+    } else {
+      if (guess === sno) {
+        highscore = score;
+        document.querySelector(".highscore").textContent = highscore;
+        document.querySelector(".correct").style.backgroundColor =
+          "rgb(12, 133, 38)";
+        document.querySelector(".correct").style.fontSize = "20px";
 
-// Childern 0 for thumbnail purpose
-// Childern 1 is content showing
-// children 1-> children 0  for more text
-// children 1-> children 1  for read more
+        if (score >= 15) {
+          document.querySelector(".message").textContent =
+            "😎Execellent job...";
+        }
+        if (score > 10 && score < 15) {
+          document.querySelector(".message").textContent = "✔Good job";
+        }
+        if (score >= 5 && score < 10) {
+          document.querySelector(".message").textContent = "😊Keep it up...";
+        }
+        document.querySelector(".number").textContent = sno;
+        document.querySelector(".number").style.color = "#111";
+        document.querySelector(".number").style.backgroundColor =
+          "rgba(12, 186, 27, 0.3)";
 
-function p_show(x) {
+        document.querySelector(".high").style.backgroundColor = "";
+        document.querySelector(".high").style.fontSize = "";
+        document.querySelector(".low").style.backgroundColor = "";
+        document.querySelector(".low").style.fontSize = "";
+      } else if (guess > sno) {
+        score--;
+        document.querySelector(".message").textContent =
+          "Greater than Secret...";
+        document.querySelector(".score").textContent = score;
+        document.querySelector(".high").style.backgroundColor =
+          "rgb(214, 41, 41)";
+        document.querySelector(".high").style.fontSize = "20px";
 
-  var readMore = x.children[1].children[2];
-  if (readMore.textContent === "Read more...") {
-    x.style.display = "Block";
-    x.children[1].children[1].style.display = "inline";
-    
-    x.classList.remove("post");
+        document.querySelector(".correct").style.backgroundColor = "";
+        document.querySelector(".correct").style.fontSize = "";
 
-    for (let i = 0; i < contentList_Children.length; i++) {
-      if (contentList_Children[i] != x) {
-        contentList_Children[i].style.display = "none";
+        document.querySelector(".low").style.backgroundColor = "";
+        document.querySelector(".low").style.fontSize = "";
+      } else if (guess < sno) {
+        score--;
+        document.querySelector(".message").textContent = "Less than Secret...";
+        document.querySelector(".score").textContent = score;
+        document.querySelector(".low").style.backgroundColor =
+          "rgb(209, 204, 47)";
+        document.querySelector(".low").style.fontSize = "20px";
+
+        document.querySelector(".correct").style.backgroundColor = "";
+        document.querySelector(".correct").style.fontSize = "";
+        document.querySelector(".high").style.backgroundColor = "";
+        document.querySelector(".high").style.fontSize = "";
       }
     }
-    // document.querySelector(".thumbnail").style.padding="0%";
-    document.querySelector(".thumbnail").style.height="30rem";
-    document.querySelector(".thumbnail").style.width="98%";
-    document.querySelector(".thumbnail_pic").style.height="30rem";
-    document.querySelector(".thumbnail_pic").style.width="100%";
-    document.querySelector(".tutorials_topic").style.display="none";
-    readMore.textContent = "Read less...";
-    console.log(x.children[1].children[0]);
-    x.children[1].children[0].style.display="none";
   } else {
-    if(x.children[1].children[1].style.display == "none"){
-    x.children[1].children[0].style.display="";
-    document.querySelector(".tutorials_topic").style.display="Block"; 
-    readMore.textContent = "Read more...";
-    document.querySelector(".thumbnail_pic").style.height="11rem";
-    document.querySelector(".thumbnail_pic").style.width="11rem";
-    document.querySelector(".thumbnail").style.height="11rem";
-    document.querySelector(".thumbnail").style.width="11rem";
+    document.querySelector(".message").textContent =
+      "😒Never Give up! Try again...";
+    document.querySelector(".number").style.backgroundColor =
+      "rgb(214, 41, 41)";
+    // resetGame();
   }
+};
+
+document.querySelector(".restart").addEventListener("click", resetGuessGame);
+
+document.querySelector(".check").addEventListener("click", startGuessGame);
+
+var modal = document.getElementById("myModal");
+var Loose = document.getElementById("loose");
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function () {
+  modal.style.display = "none";
+};
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
-}
-
-const ItemsToHide = [...document.querySelectorAll(".more_text")];
-
-function p_hide(y) {
-  if (y.textContent == "Read less...") {
-
-    for (let i = 0; i < contentList_Children.length; i++) {
-
-      contentList_Children[i].classList.add("post");
-      contentList_Children[i].style.display = "flex";
-    }
-
-    for (let i = 0; i < ItemsToHide.length; i++) {
-      ItemsToHide[i].style.display = "none";
-    }
+};
+loose.onclick = function () {
+  if (score <= 5) {
+    modal.style.display = "block";
+    document.querySelector(".modaltext").textContent =
+      "You Loose the Game Try NewGame! ";
+    document.querySelector("#newgame").addEventListener("click", function () {
+      resetGame();
+      modal.style.display = "none";
+    });
   }
-}
-function Aboutme(){
-  location.href = "/0-ProjectDesign/About.html";
-}
-
-
-
+  if (highscore > 5) {
+    modal.style.display = "block";
+    document.querySelector(".modaltext").textContent = "Welldone Winner! ";
+    document.querySelector("#newgame").addEventListener("click", function () {
+      resetGame();
+      modal.style.display = "none";
+    });
+  }
+};
